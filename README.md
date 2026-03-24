@@ -33,9 +33,20 @@ A modern, responsive single-page website for **Revolution Events Ltd** - Tanzani
 - **CSS** - Custom styling (no frameworks)
 - **Google Fonts** - Bebas Neue, Montserrat, Raleway
 
-## Getting Started
+# Revolution Events Website
+
+![Revolution Events Logo](./public/logo2.png)
+
+A modern, responsive single-page website for **Revolution Events Ltd** - Tanzania's premier event production company.
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+
 # Install dependencies
 npm install
 
@@ -49,7 +60,152 @@ npm run build
 npm run preview
 ```
 
-## Project Structure
+---
+
+## 📚 Git Commands
+
+### Setup
+```bash
+# Initialize a new git repository
+git init
+
+# Set your identity
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+```
+
+### Branching
+```bash
+# Create a new branch
+git checkout -b feature/your-feature
+
+# Switch branches
+git checkout main
+
+# List all branches
+git branch
+
+# Delete a branch
+git branch -d branch-name
+```
+
+### Making Changes
+```bash
+# Check status
+git status
+
+# Add all changes
+git add .
+
+# Add specific file
+git add filename
+
+# Commit changes
+git commit -m "Your commit message"
+
+# Add and commit in one command
+git commit -am "Your commit message"
+```
+
+### History & Navigation
+```bash
+# View commit history
+git log
+
+# View recent commits (compact)
+git log --oneline
+
+# View differences
+git diff
+
+# View specific file changes
+git diff filename
+```
+
+### Syncing
+```bash
+# Pull latest changes
+git pull origin main
+
+# Push to remote
+git push origin main
+
+# Push to specific branch
+git push origin branch-name
+
+# Push and set upstream
+git push -u origin branch-name
+```
+
+### Stashing
+```bash
+# Save changes temporarily
+git stash
+
+# List stashes
+git stash list
+
+# Apply stash
+git stash apply
+
+# Apply and remove stash
+git stash pop
+```
+
+### Undoing Changes
+```bash
+# Discard changes in working directory
+git checkout -- filename
+
+# Unstage a file
+git reset filename
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Completely undo last commit
+git reset --hard HEAD~1
+```
+
+---
+
+## 🔧 Common Workflow
+
+### Typical Development Flow
+```bash
+# 1. Create and switch to new branch
+git checkout -b feature/my-feature
+
+# 2. Make changes and commit
+git add .
+git commit -m "Add new feature"
+
+# 3. Push to remote
+git push -u origin feature/my-feature
+
+# 4. After testing, merge to main
+git checkout main
+git pull origin main
+git merge feature/my-feature
+git push origin main
+
+# 5. Delete branch (optional)
+git branch -d feature/my-feature
+git push origin --delete feature/my-feature
+```
+
+### Reverting a Commit
+```bash
+# Find the commit hash
+git log --oneline
+
+# Revert specific commit
+git revert commit-hash
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 revolution_events/
