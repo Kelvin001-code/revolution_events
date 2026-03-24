@@ -33,12 +33,6 @@ A modern, responsive single-page website for **Revolution Events Ltd** - Tanzani
 - **CSS** - Custom styling (no frameworks)
 - **Google Fonts** - Bebas Neue, Montserrat, Raleway
 
-# Revolution Events Website
-
-![Revolution Events Logo](./public/logo2.png)
-
-A modern, responsive single-page website for **Revolution Events Ltd** - Tanzania's premier event production company.
-
 ---
 
 ## 🚀 Quick Start
