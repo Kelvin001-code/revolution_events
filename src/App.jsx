@@ -179,12 +179,12 @@ function App() {
                 We focus on delivering <strong>top-notch visual experiences</strong> partnered with friendly, on-time and on-budget service. Big or small, we can handle it all.
               </p>
               <div className="about-pillars">
-                <div className="pillar"><span className="pi">🎯</span><span>Precision Planning</span></div>
-                <div className="pillar"><span className="pi">🔥</span><span>Pyro Specialists</span></div>
-                <div className="pillar"><span className="pi">💡</span><span>Visual Innovation</span></div>
-                <div className="pillar"><span className="pi">⏱️</span><span>On-Time Delivery</span></div>
-                <div className="pillar"><span className="pi">🏆</span><span>Industry Leaders</span></div>
-                <div className="pillar"><span className="pi">🌍</span><span>Tanzania's #1</span></div>
+                <div className="pillar"><div className="pillar-icon">1</div><div className="pillar-content"><h4>Precision Planning</h4><p>Meticulous timelines, logistics and risk-free execution.</p></div></div>
+                <div className="pillar"><div className="pillar-icon">2</div><div className="pillar-content"><h4>Pyro Specialists</h4><p>Certified pyrotechnic design with full safety compliance.</p></div></div>
+                <div className="pillar"><div className="pillar-icon">3</div><div className="pillar-content"><h4>Visual Innovation</h4><p>Cutting-edge LED, projection and set design techniques.</p></div></div>
+                <div className="pillar"><div className="pillar-icon">4</div><div className="pillar-content"><h4>On-Time Delivery</h4><p>Proven track record for milestone-driven event production.</p></div></div>
+                <div className="pillar"><div className="pillar-icon">5</div><div className="pillar-content"><h4>Industry Leaders</h4><p>Trusted by major brands and global organizations.</p></div></div>
+                <div className="pillar"><div className="pillar-icon">6</div><div className="pillar-content"><h4>Tanzania's #1</h4><p>Pioneer in large-scale and premium event experiences.</p></div></div>
               </div>
             </div>
           </div>
@@ -684,8 +684,28 @@ function App() {
         </div>
       </footer>
 
-      {/* Back to top */}
-      <a href="#home" className="back-top" id="backTop" aria-label="Back to top" onClick={(e) => scrollTo(e, '#home')}>↑</a>
+      {/* Floating action buttons */}
+      <div className="fab-group">
+        <button
+          className="fab"
+          aria-label="Back to top"
+          onClick={(e) => {
+            e.preventDefault()
+            const home = document.querySelector('#home')
+            if (home) home.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+        >
+          ↑
+        </button>
+        <a
+          href="#contact"
+          className="fab fab-note"
+          aria-label="Tell us about your event"
+          onClick={(e) => scrollTo(e, '#contact')}
+        >
+          ✉
+        </a>
+      </div>
 
       {/* Particle Canvas Script */}
       <ParticlesCanvas />
