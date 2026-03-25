@@ -153,7 +153,7 @@ function App() {
               <div className="av-corner br"></div>
               <div className="av-frame">
                 <div className="av-art">
-                  <img src="/logo1.png" alt="Revolution Events Logo" style={{width:'75%',height:'75%',objectFit:'contain',filter:'drop-shadow(0 0 40px rgba(208,16,32,0.4))',opacity:0.9}}/>
+                  <img src="/logo1.png" alt="Revolution Events Logo" />
                 </div>
               </div>
               <div className="av-badge">
@@ -559,11 +559,11 @@ function App() {
                   <div className="form-row">
                     <div className="form-group">
                       <label>First Name</label>
-                      <input type="text" placeholder="John" required/>
+                      <input type="text" placeholder="Jackson" required/>
                     </div>
                     <div className="form-group">
                       <label>Last Name</label>
-                      <input type="text" placeholder="Doe" required/>
+                      <input type="text" placeholder="William" required/>
                     </div>
                   </div>
                   <div className="form-row">

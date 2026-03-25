@@ -92,26 +92,30 @@ function Services() {
           <table className="specs-table">
             <thead>
               <tr>
-                <th>Type</th>
-                <th>Capacity</th>
-                <th>Features</th>
+                <th>Width</th>
+                <th>Length Range</th>
+                <th>Material</th>
+                <th>Best For</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Classic Marquee</td>
-                <td>100-500 guests</td>
-                <td>Clear span, climate controlled</td>
+                <td data-label="Width">20m</td>
+                <td data-label="Length Range">5m - 50m</td>
+                <td data-label="Material">Clear / White</td>
+                <td data-label="Best For">Large banquets, festivals, weddings</td>
               </tr>
               <tr>
-                <td>Pagoda Tent</td>
-                <td>50-200 guests</td>
-                <td>Asian style, elegant peaks</td>
+                <td data-label="Width">10m</td>
+                <td data-label="Length Range">33m</td>
+                <td data-label="Material">Clear / White</td>
+                <td data-label="Best For">Corporate events, product launches</td>
               </tr>
               <tr>
-                <td>Structure Tent</td>
-                <td>200-1000 guests</td>
-                <td>Clear walls, convertible</td>
+                <td data-label="Width">5m</td>
+                <td data-label="Length Range">5m</td>
+                <td data-label="Material">Clear / White</td>
+                <td data-label="Best For">Intimate gatherings, VIP areas</td>
               </tr>
             </tbody>
           </table>
