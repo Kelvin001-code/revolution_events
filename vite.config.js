@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: ['thirstiest-divina-noncentrally.ngrok-free.dev', 'all'],
+    allowedHosts: ['unboring-evelia-topologic.ngrok-free.dev']
   },
 })
