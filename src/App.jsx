@@ -423,8 +423,20 @@ function App() {
         <div className="clients-ticker-wrap">
           <div className="clients-ticker">
             <div className="ct-track" id="tickerTrack">
-              {['VODACOM','AIRTEL','TIGO','TTCL','SMILE','STANBIC BANK','NMB BANK','ABSA','STANDARD CHARTERED','CRDB BANK','DTB','JOHNNIE WALKER','HENNESSY','MOËT & CHANDON','BACARDÍ','BUDWEISER','CASTLE LITE','COCA-COLA','PEPSI','AZAM MEDIA','DSTV','WASAFI MEDIA','MERCEDES-BENZ','CAT','AIR TANZANIA','UNITED NATIONS','TED'].map((name, i) => (
-                <div key={i} className="ct-item"><span>{name}</span><small>{['Telecom','Telecom','Telecom','Telecom','Finance','Finance','Finance','Finance','Finance','Lifestyle','Lifestyle','Lifestyle','Lifestyle','FMCG','FMCG','Media','Media','Media','Automotive','Industrial','Aviation','International','Global'][i % 23]}</small></div>
+              {[
+                {name:'VODACOM',cat:'Telecom'},{name:'AIRTEL',cat:'Telecom'},{name:'YAS',cat:'Telecom'},
+                {name:'TTCL',cat:'Telecom'},{name:'SMILE',cat:'Telecom'},{name:'STANBIC BANK',cat:'Finance'},
+                {name:'NMB BANK',cat:'Finance'},{name:'ABSA',cat:'Finance'},{name:'STANDARD CHARTERED',cat:'Finance'},
+                {name:'CRDB BANK',cat:'Finance'},{name:'DTB',cat:'Finance'},{name:'JOHNNIE WALKER',cat:'Lifestyle'},
+                {name:'HENNESSY',cat:'Lifestyle'},{name:'MOËT & CHANDON',cat:'Lifestyle'},{name:'BACARDÍ',cat:'Lifestyle'},
+                {name:'BUDWEISER',cat:'Lifestyle'},{name:'CASTLE LITE',cat:'Lifestyle'},{name:'COCA-COLA',cat:'FMCG'},
+                {name:'PEPSI',cat:'FMCG'},{name:'DSTV',cat:'Media'},{name:'WASAFI MEDIA',cat:'Media'},
+                {name:'AZAM',cat:'Media'},{name:'MERCEDES-BENZ',cat:'Automotive'},{name:'CAT',cat:'Industrial'},
+                {name:'AIR TANZANIA',cat:'Aviation'},{name:'UNITED NATIONS TANZANIA',cat:'International'},
+                {name:'SADC',cat:'International'},{name:'CCM',cat:'Political'},{name:'TED',cat:'Global'},
+                {name:'KILI INTERNATIONAL MARATHON',cat:'International'}
+              ].map((c, i) => (
+                <div key={i} className="ct-item"><span>{c.name}</span><small>{c.cat}</small></div>
               ))}
             </div>
           </div>
@@ -432,8 +444,50 @@ function App() {
 
         <div className="container">
           <div className="clients-grid reveal">
-            {['VODACOM','AIRTEL','TIGO','NMB BANK','ABSA','CRDB BANK','STANBIC','DTB','JOHNNIE WALKER','HENNESSY','COCA-COLA','PEPSI','MERCEDES-BENZ','AIR TANZANIA','UNITED NATIONS','DSTV','AZAM MEDIA','TED'].map((name, i) => (
-              <div key={i} className="cg-item"><span>{name}</span><small>{['Telecom','Telecom','Telecom','Finance','Finance','Finance','Finance','Finance','Lifestyle','Lifestyle','FMCG','FMCG','Automotive','Aviation','International','Media','Media','Global'][i]}</small></div>
+            {[
+              {name:'Vodacom',             file:'vodacom-logo.png',                    dark:false},
+              {name:'Airtel',              file:'airtel-logo.jpg',                     dark:false},
+              {name:'Yas',                 file:'Yas-logo.png',                        dark:true},
+              {name:'TTCL',                file:'ttcl-1.jpg',                          dark:true},
+              {name:'Smile',               file:'smile-logo.png',                      dark:true},
+              {name:'NMB Bank',            file:'nmb-white-logo.png',                  dark:false},
+              {name:'ABSA',                file:'ABSA-Logo.png',                       dark:false},
+              {name:'CRDB Bank',           file:'crdb-logo.png',                       dark:true},
+              {name:'Stanbic',             file:'Stanbic-logo.webp',                   dark:true},
+              {name:'DTB',                 file:'dtb-logo.webp',                       dark:true},
+              {name:'Standard Chartered',  file:'Standard-Chartered-logo.png',         dark:true},
+              {name:'Johnnie Walker',      file:'Johnnie-Walker-logo.png',             dark:true},
+              {name:'Hennessy',            file:'Hennessy-Logo.png',                   dark:false},
+              {name:'Moët & Chandon',      file:'Moët_&_Chandon-logo.png',             dark:true},
+              {name:'Bacardí',             file:'bacardi-logo.png',                    dark:true},
+              {name:'Budweiser',           file:'budweiser-logo.png',                  dark:true},
+              {name:'Castle Lite',         file:'castle lite-logo.png',                dark:true},
+              {name:'Coca-Cola',           file:'Coca-Cola-Logo.png',                  dark:false},
+              {name:'Pepsi',               file:'pepsi-logo.png',                      dark:false},
+              {name:'Mercedes-Benz',       file:'mercedes-benz-logo.png',              dark:true},
+              {name:'CAT',                 file:'cat-logo.png',                        dark:false},
+              {name:'Air Tanzania',        file:'air tanzania-logo.png',               dark:true},
+              {name:'United Nations Tanzania', file:'united nations tanzania-logo.png',dark:true},
+              {name:'SADC',                file:'SADC-logo.png',                       dark:true},
+              {name:'CCM',                 file:'ccm-logo.png',                        dark:true},
+              {name:'DSTV',                file:'dstv-logo.png',                       dark:false},
+              {name:'Azam',                file:'azam-logo.png',                       dark:false},
+              {name:'Wasafi Media',        file:'wasafi media-logo.png',               dark:true},
+              {name:'TED',                 file:'ted-logo.png',                        dark:false},
+              {name:'Kili International Marathon', file:'kili international marathon-logo.png', dark:true},
+            ].map((client, i) => (
+              <div key={i} className="cg-item">
+                <img
+                  src={`/${client.file}`}
+                  alt={client.name}
+                  className="cg-logo on-dark"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    e.target.nextSibling.style.display = 'block'
+                  }}
+                />
+                <span className="cg-fallback">{client.name}</span>
+              </div>
             ))}
           </div>
           <div className="clients-badge reveal">
