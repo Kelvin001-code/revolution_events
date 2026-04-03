@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: ['thirstiest-divina-noncentrally.ngrok-free.dev', 'all'],
-    allowedHosts: ['unboring-evelia-topologic.ngrok-free.dev']
+    allowedHosts: ['thirstiest-divina-noncentrally.ngrok-free.dev', 'unboring-evelia-topologic.ngrok-free.dev', 'all']
   },
 })

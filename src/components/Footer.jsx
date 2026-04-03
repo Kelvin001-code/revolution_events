@@ -1,6 +1,45 @@
 function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const socials = [
+    {
+      id: 'youtube',
+      label: '▶',
+      name: 'YouTube',
+      color: '#FF0000',
+      textColor: '#FFFFFF',
+      url: 'https://www.youtube.com/@revolutionevents',
+      username: 'revolution events'
+    },
+    {
+      id: 'facebook',
+      label: 'f',
+      name: 'Facebook',
+      color: '#1877F2',
+      textColor: '#FFFFFF',
+      url: 'https://www.facebook.com/revolutionevents',
+      username: 'revolution events'
+    },
+    {
+      id: 'linkedin',
+      label: 'in',
+      name: 'LinkedIn',
+      color: '#0A66C2',
+      textColor: '#FFFFFF',
+      url: 'https://www.linkedin.com/company/revolutionevents',
+      username: 'revolution events'
+    },
+    {
+      id: 'instagram',
+      label: '📷',
+      name: 'Instagram',
+      color: 'radial-gradient(circle at 30% 30%, #feda75 0%, #d62976 45%, #4f5bd5 100%)',
+      textColor: '#FFFFFF',
+      url: 'https://www.instagram.com/revolutionevents',
+      username: 'revolution events'
+    }
+  ]
+
   return (
     <footer>
       <div className="footer-top">
@@ -15,10 +54,21 @@ function Footer() {
                 with world-class fireworks, projection mapping, LED screens, and visual effects.
               </p>
               <div className="ft-socials">
-                <a href="#" className="ft-social">f</a>
-                <a href="#" className="ft-social">in</a>
-                <a href="#" className="ft-social">ig</a>
-                <a href="#" className="ft-social">yt</a>
+                {socials.map((social) => (
+                  <div className="ft-social-item" key={social.id}>
+                    <div
+                      className={`ft-social ${social.id}`}
+                      title={social.name}
+                      style={{
+                        background: social.color,
+                        color: social.textColor,
+                        borderColor: social.id === 'instagram' ? 'transparent' : 'rgba(255,255,255,0.1)'
+                      }}
+                    >
+                      {social.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 function Contact() {
-  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.contact .reveal')
@@ -22,14 +21,12 @@ function Contact() {
     btn.textContent = 'Sending...'
     btn.disabled = true
     setTimeout(() => {
-      setSubmitted(true)
       btn.textContent = '✓ Enquiry Sent!'
       btn.style.background = 'linear-gradient(135deg, #1a8a3a, #0d5c26)'
       setTimeout(() => {
         btn.textContent = 'Send Enquiry →'
         btn.style.background = ''
         btn.disabled = false
-        setSubmitted(false)
         e.target.reset()
       }, 3000)
     }, 1200)

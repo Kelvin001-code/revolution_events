@@ -68,7 +68,7 @@ function Hero() {
       <div className="hero-content">
         <div className="hero-eyebrow">
           <span className="eyebrow-line"></span>
-          Tanzania's Premier Event Specialists
+          Revolution Events
           <span className="eyebrow-line"></span>
         </div>
         <h1 className="hero-title">

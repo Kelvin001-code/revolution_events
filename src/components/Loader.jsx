@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 export default function Loader({ hidden }) {
   return (
     <div id="loader" className={hidden ? 'hidden' : ''}>

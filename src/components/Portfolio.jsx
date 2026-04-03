@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 function Portfolio() {
-  const [filter, setFilter] = useState('all')
-
   useEffect(() => {
     const reveals = document.querySelectorAll('.portfolio .reveal')
     const observer = new IntersectionObserver((entries) => {
@@ -17,17 +15,15 @@ function Portfolio() {
   }, [])
 
   const projects = [
-    { cat: 'fireworks', name: 'New Year Celebration', tag: 'Fireworks', bg: 'wg-bg1' },
-    { cat: 'led', name: 'Corporate Conference', tag: 'LED Display', bg: 'wg-bg2' },
-    { cat: 'projection', name: 'Product Launch', tag: 'Projection Mapping', bg: 'wg-bg3' },
-    { cat: 'marquee', name: 'Wedding Reception', tag: 'Marquee', bg: 'wg-bg4' },
-    { cat: 'vfx', name: 'Music Festival', tag: 'Visual Effects', bg: 'wg-bg5' },
-    { cat: 'fireworks', name: 'Independence Day', tag: 'Fireworks', bg: 'wg-bg6' },
-    { cat: 'led', name: 'Sports Event', tag: 'LED Display', bg: 'wg-bg7' },
-    { cat: 'marquee', name: 'Gala Dinner', tag: 'Marquee', bg: 'wg-bg8' }
+    { cat: 'projection', name: 'International Concert Stage', tag: 'Projection Mapping', bg: 'wg-bg1' },
+    { cat: 'vfx', name: 'Productlaunch VFX', tag: 'Visual Effects', bg: 'wg-bg2' },
+    { cat: 'fireworks', name: 'Stadium Fireworks Display', tag: 'Fireworks', bg: 'wg-bg3' },
+    { cat: 'fireworks', name: 'Indoor Pyro Show', tag: 'Fireworks', bg: 'wg-bg4' },
+    { cat: 'led', name: 'Corporate Keynote Event', tag: 'LED Display', bg: 'wg-bg5' },
+    { cat: 'marquee', name: 'Luxuary Gala Tent', tag: 'Marquee', bg: 'wg-bg6' },
+    { cat: 'vfx', name: 'Building Light Art Show', tag: 'Visual Effects', bg: 'wg-bg7' },
+    { cat: 'marquee', name: 'Stadium Festival Night', tag: 'Marquee', bg: 'wg-bg8' }
   ]
-
-  const filters = ['all', 'fireworks', 'led', 'projection', 'marquee', 'vfx']
 
   return (
     <section className="portfolio" id="portfolio">
@@ -39,23 +35,11 @@ function Portfolio() {
           <div className="sec-divider"></div>
         </div>
 
-        <div className="work-filters reveal">
-          {filters.map(f => (
-            <button
-              key={f}
-              className={`wf-btn ${filter === f ? 'active' : ''}`}
-              onClick={() => setFilter(f)}
-            >
-              {f.charAt(0).toUpperCase() + f.slice(1)}
-            </button>
-          ))}
-        </div>
-
         <div className="work-grid">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className={`wg-item ${filter !== 'all' && project.cat !== filter ? 'hidden' : ''} reveal`}
+              className="wg-item reveal"
               data-cat={project.cat}
             >
               <div className={`wg-bg ${project.bg}`}></div>

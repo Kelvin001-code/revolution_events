@@ -21,7 +21,7 @@ function Clients() {
     { name: 'SAFARICOM', desc: 'Partner' },
     { name: 'MTN', desc: 'Client' },
     { name: 'VODACOM', desc: 'Partner' },
-    { name: 'AIR TANZANA', desc: 'Vendor' },
+    { name: 'AIR TANZANIA', desc: 'Vendor' },
     { name: 'NMB BANK', desc: 'Client' }
   ]
 

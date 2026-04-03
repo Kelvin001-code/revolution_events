@@ -19,38 +19,38 @@ function Services() {
       type: 'fireworks',
       wide: true,
       num: '01',
-      icon: '🎆',
       title: 'Fireworks & Pyrotechnics',
-      desc: 'Spectacular aerial and ground displays for weddings, corporate events, and celebrations. ISO certified safety standards.'
+      desc: 'Spectacular aerial and ground displays for weddings, corporate events, and celebrations. ISO certified safety standards.',
+      image: '/fireworks & pyrotechnics.jpg'
     },
     {
       type: 'led',
       num: '02',
-      icon: '📺',
-      title: 'LED Screens',
-      desc: 'High-resolution indoor and outdoor LED walls for impactful presentations and visual displays.'
+      title: 'High-definition LED Screens',
+      desc: 'High-resolution indoor and outdoor LED walls for impactful presentations and visual displays.',
+      image: '/high-definition LED screens.jpg'
     },
     {
       type: 'projection',
       num: '03',
-      icon: '📽️',
       title: 'Projection Mapping',
-      desc: 'Transform any surface into a dynamic canvas with cutting-edge 3D projection technology.'
+      desc: 'Transform any surface into a dynamic canvas with cutting-edge 3D projection technology.',
+      image: '/projection mapping.jpg'
     },
     {
       type: 'vfx',
       num: '04',
-      icon: '✨',
       title: 'Visual Effects',
-      desc: 'Fog, confetti, lasers, and special effects that create memorable moments.'
+      desc: 'Fog, confetti, lasers, and special effects that create memorable moments.',
+      image: '/visual effects.jpg'
     },
     {
       type: 'marquee',
       num: '05',
-      icon: '⛺',
-      title: 'Marquee Hire',
+      title: 'Marquee & Tent Hire',
       desc: 'Elegant marquees and tents for outdoor events, providing shelter with style.',
-      specs: true
+      specs: true,
+      image: '/marquee & tent hire.png'
     }
   ]
 
@@ -70,10 +70,20 @@ function Services() {
         <div className="services-mosaic">
           {services.map((svc, idx) => (
             <div key={idx} className={`svc-card ${svc.wide ? 'svc-wide' : ''} svc-${svc.type} reveal`}>
-              <div className="svc-bg"></div>
+              <div
+                className="svc-bg"
+                style={{
+                  backgroundImage: `url(${encodeURI(svc.image)})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              ></div>
               <span className="svc-num">{svc.num}</span>
               <div className="svc-body">
-                <div className="svc-icon">{svc.icon}</div>
+                <div className="svc-icon">
+                  <img src={encodeURI(svc.image)} alt={svc.title} />
+                </div>
                 <h3>{svc.title}</h3>
                 <p>{svc.desc}</p>
                 <a href="#contact" className="svc-link">

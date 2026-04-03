@@ -51,6 +51,44 @@ function App() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const specialisms = [
+    {
+      type: 'fireworks',
+      num: '01',
+      title: 'Fireworks & Pyrotechnics',
+      desc: "Tanzania's #1 pyrotechnics provider for over a decade. From grand outdoor displays to intimate indoor sequenced shows — every spark is precision-engineered.",
+      image: '/fireworks & pyrotechnics.jpg'
+    },
+    {
+      type: 'led',
+      num: '02',
+      title: 'High-Definition LED Screens',
+      desc: 'High-resolution indoor and outdoor LED walls for impactful presentations and visual displays.',
+      image: '/high-definition LED screens.jpg'
+    },
+    {
+      type: 'projection',
+      num: '03',
+      title: 'Projection Mapping',
+      desc: 'Transform any surface into a dynamic canvas with cutting-edge 3D projection technology.',
+      image: '/projection mapping.jpg'
+    },
+    {
+      type: 'vfx',
+      num: '04',
+      title: 'Visual Effects',
+      desc: 'Fog, confetti, lasers, and special effects that create unforgettable moments.',
+      image: '/visual effects.jpg'
+    },
+    {
+      type: 'marquee',
+      num: '05',
+      title: 'Marquee & Tent Hire',
+      desc: 'Elegant marquees and tents for outdoor events, providing shelter with style.',
+      image: '/marquee & tent hire.png'
+    }
+  ]
+
   return (
     <>
       {/* LOADER */}
@@ -204,65 +242,29 @@ function App() {
         </div>
 
         <div className="services-mosaic reveal">
-          <div className="svc-card svc-fireworks">
-            <div className="svc-bg"></div>
-            <div className="svc-num">01</div>
-            <div className="svc-body">
-              <div className="svc-icon">🎆</div>
-              <h3>FIREWORKS &amp;<br/>PYROTECHNICS</h3>
-              <p>Tanzania's #1 pyrotechnics provider for over a decade. From grand outdoor displays to intimate indoor sequenced shows — every spark is precision-engineered.</p>
-              <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
+          {specialisms.map((svc) => (
+            <div key={svc.num} className={`svc-card ${svc.type === 'projection' ? 'svc-wide' : ''} svc-${svc.type}`}>
+              <div
+                className="svc-bg"
+                style={{
+                  backgroundImage: `url(${encodeURI(svc.image)})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              ></div>
+              <div className="svc-num">{svc.num}</div>
+              <div className="svc-body">
+                <div className="svc-icon">
+                  <img src={encodeURI(svc.image)} alt={svc.title} />
+                </div>
+                <h3>{svc.title}</h3>
+                <p>{svc.desc}</p>
+                <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
+              </div>
+              <div className="svc-bar"></div>
             </div>
-            <div className="svc-bar"></div>
-          </div>
-
-          <div className="svc-card svc-led">
-            <div className="svc-bg"></div>
-            <div className="svc-num">02</div>
-            <div className="svc-body">
-              <div className="svc-icon">📺</div>
-              <h3>HIGH-DEFINITION<br/>LED SCREENS</h3>
-              <p>The largest inventory of High-Definition P2 LED panels in Tanzania. Crystal-clear visuals at any scale, indoors or outdoors.</p>
-              <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
-            </div>
-            <div className="svc-bar"></div>
-          </div>
-
-          <div className="svc-card svc-projection svc-wide">
-            <div className="svc-bg"></div>
-            <div className="svc-num">03</div>
-            <div className="svc-body">
-              <div className="svc-icon">🎥</div>
-              <h3>PROJECTION<br/>MAPPING</h3>
-              <p>The first company to bring projection mapping to Tanzania. Transform buildings, pools, cars, keynote walls, and even cakes into living canvases of light and motion.</p>
-              <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
-            </div>
-            <div className="svc-bar"></div>
-          </div>
-
-          <div className="svc-card svc-vfx svc-wide">
-            <div className="svc-bg"></div>
-            <div className="svc-num">04</div>
-            <div className="svc-body">
-              <div className="svc-icon">✨</div>
-              <h3>VISUAL<br/>EFFECTS</h3>
-              <p>Flame throwers, CO₂ thrusters, indoor-safe pyros, smoke machines, bubble machines, snow machines, soft mist makers — the full theatrical arsenal.</p>
-              <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
-            </div>
-            <div className="svc-bar"></div>
-          </div>
-
-          <div className="svc-card svc-marquee">
-            <div className="svc-bg"></div>
-            <div className="svc-num">05</div>
-            <div className="svc-body">
-              <div className="svc-icon">⛺</div>
-              <h3>MARQUEE &amp;<br/>TENT HIRE</h3>
-              <p>Largest marquee coverage in Tanzania — up to 50m × 20m. Clear or white, for intimate gatherings to stadium-scale events.</p>
-              <a href="#contact" className="svc-link" onClick={(e) => scrollTo(e, '#contact')}>Enquire <span>→</span></a>
-            </div>
-            <div className="svc-bar"></div>
-          </div>
+          ))}
         </div>
 
         <div className="container">
@@ -575,99 +577,91 @@ function App() {
                   <div className="cid-icon">✉️</div>
                   <div>
                     <span className="cid-lbl">Email</span>
-                    <span className="cid-val">admin@revolution.co.tz</span>
+                    <span className="cid-val">admin@revolutionevents.co.tz</span>
                   </div>
                 </div>
                 <div className="cid-item">
                   <div className="cid-icon">🌐</div>
                   <div>
                     <span className="cid-lbl">Website</span>
-                    <span className="cid-val">www.revolution.co.tz</span>
+                    <span className="cid-val">www.revolutionevents.co.tz</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="contact-form reveal-right">
-              <div className="cf-box">
-                <div className="cf-header">
-                  <div className="sec-tag" style={{justifyContent:'flex-start'}}>Request a Quote</div>
-                  <h3>TELL US ABOUT<br/><span>YOUR EVENT</span></h3>
+            <div className="why-choose reveal-right">
+              <div className="wc-box">
+                <div className="wc-header">
+                  <div className="sec-tag" style={{justifyContent:'flex-start'}}>Why Revolution Events</div>
+                  <h3>THE <span>DIFFERENCE</span></h3>
                 </div>
-                <form id="quoteForm" onSubmit={(e) => {
-                  e.preventDefault()
-                  const btn = e.target.querySelector('.form-submit')
-                  btn.textContent = 'Sending...'
-                  btn.disabled = true
-                  setTimeout(() => {
-                    btn.textContent = '✓ Enquiry Sent!'
-                    btn.style.background = 'linear-gradient(135deg, #1a8a3a, #0d5c26)'
-                    setTimeout(() => {
-                      btn.textContent = 'Send Enquiry →'
-                      btn.style.background = ''
-                      btn.disabled = false
-                      e.target.reset()
-                    }, 3000)
-                  }, 1200)
-                }}>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>First Name</label>
-                      <input type="text" placeholder="Jackson" required/>
-                    </div>
-                    <div className="form-group">
-                      <label>Last Name</label>
-                      <input type="text" placeholder="William" required/>
+                
+                <div className="wc-grid">
+                  <div className="wc-card">
+                    <div className="wc-icon">🏆</div>
+                    <h4>20+ Years Excellence</h4>
+                    <p>Pioneering event production in Tanzania since 2000. We've set standards others follow.</p>
+                    <div className="wc-stat">
+                      <span className="stat-num">500+</span>
+                      <span className="stat-lbl">Events Delivered</span>
                     </div>
                   </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Email Address</label>
-                      <input type="email" placeholder="john@company.com" required/>
-                    </div>
-                    <div className="form-group">
-                      <label>Phone Number</label>
-                      <input type="tel" placeholder="+255 000 000 000"/>
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Event Type</label>
-                      <select required>
-                        <option value="">Select Event Type</option>
-                        <option>Corporate Event</option>
-                        <option>Concert / Live Show</option>
-                        <option>Product Launch</option>
-                        <option>Wedding</option>
-                        <option>Festival / Stadium Event</option>
-                        <option>Private Gala</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label>Service Needed</label>
-                      <select>
-                        <option value="">Select Service</option>
-                        <option>Fireworks &amp; Pyrotechnics</option>
-                        <option>HD LED Screens</option>
-                        <option>Projection Mapping</option>
-                        <option>Visual Effects</option>
-                        <option>Marquee &amp; Tent Hire</option>
-                        <option>Full Event Package</option>
-                      </select>
+                  
+                  <div className="wc-card">
+                    <div className="wc-icon">🎯</div>
+                    <h4>First Movers</h4>
+                    <p>First to bring projection mapping, largest LED inventory, and Tanzania's #1 pyrotechnics team.</p>
+                    <div className="wc-stat">
+                      <span className="stat-num">12</span>
+                      <span className="stat-lbl">Industry Firsts</span>
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label>Event Date</label>
-                    <input type="date"/>
+                  
+                  <div className="wc-card">
+                    <div className="wc-icon">⚡</div>
+                    <h4>Full-Scale Production</h4>
+                    <p>From concept to execution — creative design, technical production, logistics, and on-site management.</p>
+                    <div className="wc-stat">
+                      <span className="stat-num">50+</span>
+                      <span className="stat-lbl">Expert Team Members</span>
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label>Message / Details</label>
-                    <textarea placeholder="Tell us about your event vision, venue, estimated guests, and any special requirements..." rows="4"></textarea>
+                  
+                  <div className="wc-card featured">
+                    <div className="wc-icon">🌟</div>
+                    <h4>Unmatched Quality</h4>
+                    <p>International-grade equipment, safety-certified operations, and award-winning creative direction.</p>
+                    <div className="wc-stat">
+                      <span className="stat-num">100%</span>
+                      <span className="stat-lbl">Client Satisfaction</span>
+                    </div>
                   </div>
-                  <button type="submit" className="form-submit">Send Enquiry →</button>
-                  <p className="form-note">We respond within 24 hours. Your information is kept confidential.</p>
-                </form>
+                </div>
+                
+                <div className="wc-cta">
+                  <h4>Ready to Experience Excellence?</h4>
+                  <p>Join Tanzania's leading brands who trust Revolution Events for their most important moments.</p>
+                  <div className="wc-buttons">
+                    <div className="phone-dropdown">
+                      <button className="wc-btn primary" onClick={(e) => {
+                        e.preventDefault()
+                        const dropdown = e.target.nextElementSibling
+                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+                      }}>
+                        <span>📞</span> Call Us Now
+                      </button>
+                      <div className="phone-options">
+                        <a href="tel:+255762761132" className="phone-option">+255 762 76 11 32</a>
+                        <a href="tel:+255784624434" className="phone-option">+255 784 62 44 34</a>
+                        <a href="tel:+255752007094" className="phone-option">+255 752 00 70 94</a>
+                      </div>
+                    </div>
+                    <a href="mailto:admin@revolutionevents.co.tz" className="wc-btn secondary">
+                      <span>✉️</span> Send Email
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -718,8 +712,8 @@ function App() {
                   <li><a href="tel:+255762761132">+255 762 76 11 32</a></li>
                   <li><a href="tel:+255784624434">+255 784 62 44 34</a></li>
                   <li><a href="tel:+255752007094">+255 752 00 70 94</a></li>
-                  <li><a href="mailto:admin@revolution.co.tz">admin@revolution.co.tz</a></li>
-                  <li><a href="http://www.revolution.co.tz">www.revolution.co.tz</a></li>
+                  <li><a href="mailto:admin@revolutionevents.co.tz">admin@revolutionevents.co.tz</a></li>
+                  <li><a href="http://www.revolutionevents.co.tz">www.revolutionevents.co.tz</a></li>
                 </ul>
               </div>
             </div>
@@ -728,7 +722,7 @@ function App() {
         <div className="footer-bottom">
           <div className="container">
             <div className="fb-inner">
-              <p>© 2025 <span>Revolution Events Ltd</span>. All rights reserved. Dar es Salaam, Tanzania.</p>
+              <p>© 2026 <span>Revolution Events Ltd</span>. All rights reserved. Dar es Salaam, Tanzania.</p>
               <ul className="fb-links">
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
