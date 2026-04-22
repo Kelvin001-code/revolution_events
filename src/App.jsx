@@ -57,35 +57,35 @@ function App() {
       num: '01',
       title: 'Fireworks & Pyrotechnics',
       desc: "Tanzania's #1 pyrotechnics provider for over a decade. From grand outdoor displays to intimate indoor sequenced shows — every spark is precision-engineered.",
-      image: '/fireworks & pyrotechnics.jpg'
+      image: 'fireworks & pyrotechnics.jpg'
     },
     {
       type: 'led',
       num: '02',
       title: 'High-Definition LED Screens',
       desc: 'High-resolution indoor and outdoor LED walls for impactful presentations and visual displays.',
-      image: '/high-definition LED screens.jpg'
+      image: 'high-definition LED screens.jpg'
     },
     {
       type: 'projection',
       num: '03',
       title: 'Projection Mapping',
       desc: 'Transform any surface into a dynamic canvas with cutting-edge 3D projection technology.',
-      image: '/projection mapping.jpg'
+      image: 'projection mapping.jpg'
     },
     {
       type: 'vfx',
       num: '04',
       title: 'Visual Effects',
       desc: 'Fog, confetti, lasers, and special effects that create unforgettable moments.',
-      image: '/visual effects.jpg'
+      image: 'visual effects.jpg'
     },
     {
       type: 'marquee',
       num: '05',
       title: 'Marquee & Tent Hire',
       desc: 'Elegant marquees and tents for outdoor events, providing shelter with style.',
-      image: '/marquee & tent hire.png'
+      image: 'marquee & tent hire.png'
     }
   ]
 
@@ -95,7 +95,7 @@ function App() {
       <div id="loader" className={loading ? '' : 'hidden'}>
         <div className="loader-inner">
           <div className="loader-logo">
-            <img src="/logo3.png" alt="Revolution Events" width="90" height="90" style={{objectFit:'contain',filter:'drop-shadow(0 0 20px rgba(208,16,32,0.6))'}}/>
+            <img src="logo3.png" alt="Revolution Events" width="90" height="90" style={{objectFit:'contain',filter:'drop-shadow(0 0 20px rgba(208,16,32,0.6))'}}/>
           </div>
           <div className="loader-bar"><div className="loader-fill"></div></div>
           <div className="loader-text">REVOLUTION EVENTS</div>
@@ -105,7 +105,7 @@ function App() {
       {/* NAVBAR */}
       <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
         <a href="#home" className="nav-logo" onClick={(e) => scrollTo(e, '#home')}>
-          <img src="/logo2.png" alt="Revolution Events" className="nav-logo-img"/>
+          <img src="logo2.png" alt="Revolution Events" className="nav-logo-img"/>
         </a>
         <ul className="nav-links">
           <li><a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={(e) => scrollTo(e, '#home')}>Home</a></li>
@@ -191,7 +191,7 @@ function App() {
               <div className="av-corner br"></div>
               <div className="av-frame">
                 <div className="av-art">
-                  <img src="/logo1.png" alt="Revolution Events Logo" />
+                  <img src="logo1.png" alt="Revolution Events Logo" />
                 </div>
               </div>
               <div className="av-badge">
@@ -480,7 +480,7 @@ function App() {
             ].map((client, i) => (
               <div key={i} className="cg-item">
                 <img
-                  src={`/${client.file}`}
+                  src={`${client.file}`}
                   alt={client.name}
                   className="cg-logo on-dark"
                   onError={(e) => {
@@ -675,7 +675,7 @@ function App() {
             <div className="ft-grid">
               <div className="ft-brand">
                 <a href="#home" style={{marginBottom:'20px',display:'inline-block'}} onClick={(e) => scrollTo(e, '#home')}>
-                  <img src="/logo2.png" alt="Revolution Events" height="52" style={{display:'block',filter:'drop-shadow(0 0 8px rgba(208,16,32,0.4))',maxHeight:'52px',width:'auto'}}/>
+                  <img src="logo2.png" alt="Revolution Events" height="52" style={{display:'block',filter:'drop-shadow(0 0 8px rgba(208,16,32,0.4))',maxHeight:'52px',width:'auto'}}/>
                 </a>
                 <p>Tanzania's premier event production company — pioneering pyrotechnics, projection mapping, LED screens, visual effects, and luxury marquee hire since 2000.</p>
                 <div className="ft-socials">

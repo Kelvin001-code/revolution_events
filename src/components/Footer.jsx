@@ -47,7 +47,7 @@ function Footer() {
           <div className="ft-grid">
             <div className="ft-brand">
               <a href="#hero" className="nav-logo">
-                <img src="/logo1.png" alt="Revolution Events" className="nav-logo-img" />
+                <img src="logo1.png" alt="Revolution Events" className="nav-logo-img" />
               </a>
               <p>
                 Tanzania's premier event specialists. Creating unforgettable moments 

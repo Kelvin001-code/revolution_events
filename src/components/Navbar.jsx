@@ -37,7 +37,7 @@ export default function Navbar({ menuOpen, toggleMenu }) {
   return (
     <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
       <a href="#hero" className="nav-logo" onClick={e => smoothScroll(e, '#hero')}>
-        <img src="/logo1.png" alt="Revolution Events" className="nav-logo-img" />
+        <img src="logo1.png" alt="Revolution Events" className="nav-logo-img" />
       </a>
 
       <ul className="nav-links">
